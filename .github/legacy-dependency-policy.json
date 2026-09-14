@@ -1,0 +1,16 @@
+{
+  "repository": "ORESoftware/ores-streams",
+  "status": "legacy",
+  "forbid_new_mutable_references": true,
+  "allow_existing_immutable_pins": true,
+  "allowed_change_classes": [
+    "security",
+    "reproducibility",
+    "documentation"
+  ],
+  "forbidden_change_classes": [
+    "new_feature",
+    "new_public_api",
+    "new_release_channel"
+  ]
+}
