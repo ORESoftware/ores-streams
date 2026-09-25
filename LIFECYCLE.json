@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "repository": "ORESoftware/ores-streams",
+  "package": "alt-streams",
+  "status": "legacy",
+  "authority": false,
+  "mutable_dependencies_allowed": false,
+  "compatibility_policy": {
+    "existing_immutable_pins": "allowed",
+    "new_branch_or_moving_tag_references": "forbidden",
+    "compatibility_fixes": "security_or_reproducibility_only",
+    "new_features": "forbidden"
+  },
+  "successor_boundary": {
+    "node_streaming": "Node.js core streams or the WHATWG Web Streams API",
+    "ore_service_transport": "ORESoftware/ores-transport",
+    "drop_in_successor": null
+  },
+  "consumer_inventory": {
+    "active_oresoftware_consumers": [],
+    "historical_or_mirror_repositories": [
+      "ORESoftware/alt-streams"
+    ],
+    "inventory_date": "2026-09-14",
+    "evidence": "GitHub code search for ores-streams and alt-streams found no active ORESoftware dependency reference outside organization metadata, this repository, and the historical alt-streams mirror."
+  },
+  "retirement_criteria": [
+    "No active mutable fleet dependency references this repository.",
+    "No compatibility release has been required for 180 days.",
+    "Historical tags and already-published artifacts remain preserved."
+  ],
+  "policy_version": 1
+}

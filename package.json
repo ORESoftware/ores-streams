@@ -1,10 +1,11 @@
 {
   "name": "alt-streams",
   "version": "0.0.10001",
-  "description": "Alternative streaming API for node.js",
+  "description": "Legacy compatibility-only alternative streaming API for node.js",
   "main": "index.js",
   "scripts": {
-    "test": "suman"
+    "test": "suman",
+    "validate:lifecycle": "node scripts/validate-lifecycle.mjs"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,14 @@
     "tcp",
     "duplex",
     "streaming",
-    "buffering"
+    "buffering",
+    "legacy"
   ],
+  "oresLifecycle": {
+    "status": "legacy",
+    "authority": false,
+    "mutableDependenciesAllowed": false
+  },
   "author": "Olegzandr",
   "license": "ISC",
   "bugs": {

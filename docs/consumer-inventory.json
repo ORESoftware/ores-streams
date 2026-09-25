@@ -1,0 +1,7 @@
+{
+  "repository": "ORESoftware/ores-streams",
+  "inventory_date": "2026-09-14",
+  "active_consumers": [],
+  "historical_mirrors": ["ORESoftware/alt-streams"],
+  "new_consumers_allowed": false
+}
