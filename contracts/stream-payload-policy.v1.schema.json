@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ORESoftware/ores-streams/contracts/stream-payload-policy.v1.schema.json",
+  "title": "Legacy stream payload admission policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "codec",
+    "framing",
+    "max_encoded_bytes",
+    "max_decoded_bytes",
+    "preserve_opaque_bytes",
+    "allow_renegotiation"
+  ],
+  "properties": {
+    "codec": {
+      "enum": ["json", "messagepack", "cbor", "protobuf", "raw"]
+    },
+    "framing": {
+      "enum": ["ndjson", "json-seq", "tcp-length-delimited", "websocket-message"]
+    },
+    "max_encoded_bytes": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 16777216
+    },
+    "max_decoded_bytes": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 67108864
+    },
+    "preserve_opaque_bytes": {
+      "type": "boolean"
+    },
+    "allow_renegotiation": {
+      "type": "boolean"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "framing": { "enum": ["ndjson", "json-seq"] }
+        },
+        "required": ["framing"]
+      },
+      "then": {
+        "properties": {
+          "codec": { "const": "json" }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "codec": { "enum": ["protobuf", "raw"] }
+        },
+        "required": ["codec"]
+      },
+      "then": {
+        "properties": {
+          "preserve_opaque_bytes": { "const": true }
+        }
+      }
+    }
+  ]
+}
